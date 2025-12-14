@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youssef Hessen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .tagline {
+            font-size: 1.3em;
+            color: #dbeafe;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #93c5fd;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #ffffff;
+        }
+
+        section {
+            margin-bottom: 50px;
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            color: #60a5fa;
+            font-size: 2em;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 10px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.95em;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: #0f172a;
+            border: 2px solid #334155;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+        }
+
+        .project-mockup {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            color: rgba(255, 255, 255, 0.2);
+            border-bottom: 2px solid #334155;
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-card h3 {
+            color: #60a5fa;
+            margin-bottom: 12px;
+            font-size: 1.4em;
+        }
+
+        .project-card p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .project-tag {
+            background: #1e40af;
+            color: #dbeafe;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.85em;
+        }
+
+        .testimonials {
+            display: grid;
+            gap: 20px;
+        }
+
+        .testimonial {
+            background: #0f172a;
+            border-left: 4px solid #3b82f6;
+            padding: 20px;
+            border-radius: 8px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            margin-top: 15px;
+            color: #60a5fa;
+            font-style: normal;
+            font-weight: bold;
+        }
+
+        .testimonial-role {
+            color: #94a3b8;
+            font-size: 0.9em;
+            font-style: normal;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #94a3b8;
+            margin-top: 40px;
+        }
+
+        .contact-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .contact-btn {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: #ffffff;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(37, 99, 235, 0.6);
+            background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Youssef Hessen</h1>
+            <p class="tagline">Data Analyst | Transforming Data into Actionable Insights</p>
+        </header>
+
+        <section>
+            <h2>About Me</h2>
+            <p>Passionate data analyst with expertise in extracting meaningful insights from complex datasets. I specialize in statistical analysis, data visualization, and building data-driven solutions that help businesses make informed decisions. With over 10 completed projects, I bring a proven track record of delivering actionable insights that drive results focusing on data analysis, entry, and cleaning to contribute to impactful organizational decisions. Work involves generating meaningful insights and actionable reports to support strategic objectives.  Proficient in SQL, Python, and restaurant order analysis, with certifications from DataCamp and Maven Analytics. Dedicated to leveraging analytical and problem-solving skills to empower companies with data-driven solutions. Committed to delivering clarity and value through well-structured insights.</p>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+            <div class="skills">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">Excel</span>
+                <span class="skill-tag">Pandas</span>
+                <span class="skill-tag">NumPy</span>
+                <span class="skill-tag">Data Visualization</span>
+                <span class="skill-tag">Statistical Analysis</span>
+                <span class="skill-tag">ETL</span>
+                <span class="skill-tag">DAX</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Featured Projects</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <img src="Projects\8.jpeg" alt="Sales Dashboard" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="project-content">
+                        <h3>Retail Dashboard</h3>
+                        <p>A modern retail sales dashboard providing insights into sales by category, buyer, chain, state, and monthly trends to support executive-level decisions.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Power BI</span>
+                            <span class="project-tag">SQL</span>
+                            <span class="project-tag">DAX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="Projects\1.jpeg" alt="Sales Dashboard" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="project-content">
+                        <h3>Pharmaceutical Sales Dashboard</h3>
+                        <p>An interactive pharmaceutical sales dashboard designed to track product performance across classes, countries, and channels. The dashboard enables stakeholders to identify top-selling drugs, monitor sales distribution, and optimize product strategy.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Power BI</span>
+                            <span class="project-tag">DAX</span>
+                            <span class="project-tag">Power Query</span>
+                            <span class="project-tag">SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="Projects\2.jpeg" alt="Sales Dashboard" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="project-content">
+                        <h3>Orders Analysis Dashboard</h3>
+                        <p>A comprehensive orders analysis dashboard providing a high-level overview of sales, orders, discounts, and product trends over multiple years. Built to support data-driven decision-making and sales growth tracking.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Power BI</span>
+                            <span class="project-tag">DAX</span>
+                            <span class="project-tag">Power Query</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="Projects\4.jpeg" alt="Sales Dashboard" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="project-content">
+                        <h3>Transaction & Profit Breakdown Dashboard</h3>
+                        <p>A profit-focused transaction dashboard analyzing sales, profit, and quantity by product category and continent. Designed to uncover regional profitability and high-margin product categories.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Power BI</span>
+                            <span class="project-tag">Excel</span>
+                            <span class="project-tag">DAX</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="Projects\5.jpeg" alt="Sales Dashboard" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="project-content">
+                        <h3>HR Analytics Dashboard</h3>
+                        <p>An end-to-end HR analytics dashboard visualizing workforce distribution, headcount, salaries, performance, recruitment sources, and employee satisfaction.</p>
+                        <div class="project-tags">
+
+                            <span class="project-tag">Power BI</span>
+                            <span class="project-tag">DAX</span>
+                            <span class="project-tag">Power Query</span>
+                        </div>
+                    </div>
+                </div>
+
+        <section>
+            <h2>Testimonials</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <p>"كويس جدا ماشاء الله "</p>
+                    <p class="testimonial-author">Tamer Yaser</p>
+                    <p class="testimonial-role">Client Via Facebook</p>
+                </div>
+
+                <div class="testimonial">
+                    <p>"ماشاء الله حلو جدا جدا"</p>
+                    <p class="testimonial-author">Lodn Emad</p>
+                    <p class="testimonial-role">Client Via Facebook</p>
+                </div>
+
+                <div class="testimonial">
+                    <p>"شغل كويس جدا مع Measures ممتازة و دقيقة"</p>
+                    <p class="testimonial-author">Mahmoud Waleed</p>
+                    <p class="testimonial-role">Client Via LinkedIn</p>
+                </div>
+
+                <div class="testimonial">
+                    <p>"شغل كويس جدا و إن شاء الله مش أخر تعامل "</p>
+                    <p class="testimonial-author">Rahma</p>
+                    <p class="testimonial-role">Client Via Whatsapp</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2>Let's Work Together</h2>
+            <p>Interested in collaborating or have a project in mind? I'd love to hear from you!</p>
+            <div class="contact-buttons">
+                <a href="mailto:your.email@example.com" class="contact-btn">📧 Email Me</a>
+                <a href="https://linkedin.com/in/yourprofile" class="contact-btn">💼 LinkedIn</a>
+                <a href="https://github.com/yourusername" class="contact-btn">💻 GitHub</a>
+                <a href=" https://wa.me/+201200293214" class="contact-btn">📲 Whatsapp</a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; Youssef Hessen. All rights reserved.</p>
+            <p>Built with passion for data and insights</p>
+        </footer>
+    </div>
+</body>
+</html>

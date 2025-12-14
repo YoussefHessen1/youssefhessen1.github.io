@@ -158,12 +158,16 @@
             font-size: 0.85em;
         }
 
-        .testimonials {
-            margin-bottom: 50px;
-            background: #1e293b;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+       .testimonials {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials {
+                grid-template-columns: 1fr;
+            }
         }
 
         .testimonial {

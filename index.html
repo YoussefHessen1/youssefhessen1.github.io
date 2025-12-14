@@ -77,26 +77,65 @@
             padding-bottom: 10px;
         }
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
+               .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
 
-        .skill-tag {
-            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+        .skill-card {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            border: 2px solid #3b82f6;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s;
+        }
+
+        .skill-card:hover::before {
+            left: 100%;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.5);
+            border-color: #60a5fa;
+        }
+
+        .skill-icon {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+        }
+
+        .skill-icon i {
+            color: #60a5fa;
+        }
+
+        .skill-name {
+            font-size: 1.2em;
+            font-weight: 600;
             color: #ffffff;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-size: 0.95em;
-            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 8px;
         }
 
-        .skill-tag:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        .skill-level {
+            font-size: 0.9em;
+            color: #93c5fd;
         }
-
         .projects {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -255,16 +294,46 @@
         <section>
             <h2>Skills</h2>
             <div class="skills">
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">SQL</span>
-                <span class="skill-tag">Power BI</span>
-                <span class="skill-tag">Excel</span>
-                <span class="skill-tag">Pandas</span>
-                <span class="skill-tag">NumPy</span>
-                <span class="skill-tag">Data Visualization</span>
-                <span class="skill-tag">Statistical Analysis</span>
-                <span class="skill-tag">ETL</span>
-                <span class="skill-tag">DAX</span>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="devicon-python-plain colored"></i></div>
+                    <div class="skill-name">Python</div>
+                    <div class="skill-level">Pandas, NumPy, Matplotlib</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="devicon-mysql-plain colored"></i></div>
+                    <div class="skill-name">SQL</div>
+                    <div class="skill-level">Advanced Queries & Optimization</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="devicon-postgresql-plain colored"></i></div>
+                    <div class="skill-name">Tableau</div>
+                    <div class="skill-level">Interactive Dashboards</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📊</div>
+                    <div class="skill-name">Power BI</div>
+                    <div class="skill-level">DAX & Data Modeling</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📑</div>
+                    <div class="skill-name">Excel</div>
+                    <div class="skill-level">Pivot Tables, VBA, Power Query</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="devicon-numpy-plain colored"></i></div>
+                    <div class="skill-name">Statistical Analysis</div>
+                    <div class="skill-level">Hypothesis Testing & A/B Testing</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="devicon-pandas-plain colored"></i></div>
+                    <div class="skill-name">Data Processing</div>
+                    <div class="skill-level">ETL & Data Pipelines</div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="devicon-jupyter-plain colored"></i></div>
+                    <div class="skill-name">Data Analysis</div>
+                    <div class="skill-level">Jupyter & Analytics Tools</div>
+                </div>
             </div>
         </section>
 
